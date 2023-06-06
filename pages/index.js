@@ -42,7 +42,7 @@ export default function Home() {
       <FormControl isRequired mb={5}>
         <FormLabel>Emain</FormLabel>
         <Input
-          type="text"
+          type="email"
           name="email"
           value={values.email}
           onChange={handleChange}
@@ -64,6 +64,7 @@ export default function Home() {
         <Textarea
           type="text"
           name="message"
+          rows={4}
           value={values.message}
           onChange={handleChange}
         />
