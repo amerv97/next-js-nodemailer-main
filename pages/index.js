@@ -43,7 +43,7 @@ export default function Home() {
         <FormErrorMessage>Required</FormErrorMessage>
       </FormControl>
 
-      <FormControl isRequired mb={5}>
+      <FormControl isRequired isInvalid={!values.email} mb={5}>
         <FormLabel>Emain</FormLabel>
         <Input
           type="email"
@@ -53,7 +53,7 @@ export default function Home() {
         />
       </FormControl>
 
-      <FormControl isRequired mb={5}>
+      <FormControl isRequired isInvalid={!values.subject} mb={5}>
         <FormLabel>Subject</FormLabel>
         <Input
           type="text"
@@ -63,7 +63,7 @@ export default function Home() {
         />
       </FormControl>
 
-      <FormControl isRequired mb={5}>
+      <FormControl isRequired isInvalid={!values.message} mb={5}>
         <FormLabel>Message</FormLabel>
         <Textarea
           type="text"
