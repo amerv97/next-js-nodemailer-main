@@ -4,6 +4,7 @@ import {
   FormLabel,
   Heading,
   Input,
+  Textarea,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -28,7 +29,7 @@ export default function Home() {
   return (
     <Container maxW="450px" mt={12}>
       <Heading>Contact</Heading>
-      <FormControl isRequired>
+      <FormControl isRequired mb={5}>
         <FormLabel>Name</FormLabel>
         <Input
           type="text"
@@ -38,7 +39,7 @@ export default function Home() {
         />
       </FormControl>
 
-      <FormControl isRequired>
+      <FormControl isRequired mb={5}>
         <FormLabel>Emain</FormLabel>
         <Input
           type="text"
@@ -48,7 +49,7 @@ export default function Home() {
         />
       </FormControl>
 
-      <FormControl isRequired>
+      <FormControl isRequired mb={5}>
         <FormLabel>Subject</FormLabel>
         <Input
           type="text"
@@ -58,9 +59,9 @@ export default function Home() {
         />
       </FormControl>
 
-      <FormControl isRequired>
+      <FormControl isRequired mb={5}>
         <FormLabel>Message</FormLabel>
-        <Input
+        <Textarea
           type="text"
           name="message"
           value={values.message}
