@@ -1,4 +1,5 @@
 import {
+  Button,
   Container,
   FormControl,
   FormErrorMessage,
@@ -16,7 +17,7 @@ export default function Home() {
   const [state, setState] = useState(initState);
   const [touched, setTouched] = useState({});
 
-  const { values } = state;
+  const { values, isLoading } = state;
 
   const onBlur = ({ target }) => {
     setTouched((prev) => ({
@@ -34,6 +35,9 @@ export default function Home() {
       },
     }));
   };
+
+  const onSubmit = async () =>
+    setState((prev) => ({ ...prev, isLoading: true }));
 
   return (
     <Container maxW="450px" mt={12}>
@@ -93,6 +97,18 @@ export default function Home() {
           onBlur={onBlur}
         />
       </FormControl>
+
+      <Button
+        variant="outline"
+        colorScheme="blue"
+        isLoading={isLoading}
+        disabled={
+          !values.name || !values.email || !values.subject || !values.message
+        }
+        onClick={onSubmit}
+      >
+        Submit
+      </Button>
     </Container>
   );
 }
