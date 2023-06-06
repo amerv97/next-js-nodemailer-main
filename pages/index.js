@@ -1,6 +1,7 @@
 import {
   Container,
   FormControl,
+  FormErrorMessage,
   FormLabel,
   Heading,
   Input,
@@ -29,14 +30,17 @@ export default function Home() {
   return (
     <Container maxW="450px" mt={12}>
       <Heading>Contact</Heading>
-      <FormControl isRequired mb={5}>
+
+      <FormControl isRequired isInvalid={!values.name} mb={5}>
         <FormLabel>Name</FormLabel>
         <Input
           type="text"
           name="name"
+          errorBorderColor="red.300"
           value={values.name}
           onChange={handleChange}
         />
+        <FormErrorMessage>Required</FormErrorMessage>
       </FormControl>
 
       <FormControl isRequired mb={5}>
